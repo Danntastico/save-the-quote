@@ -16,12 +16,19 @@ export const LoginScreen = () => {
     <div className='form__main'>
       <form action='addQuote' className='form' onSubmit={handleLogin}>
         <h2 className='form__title'>Login</h2>
-        <input type='email' name='email' id='email' placeholder='e-mail' />
+        <input
+          type='email'
+          name='email'
+          id='email'
+          placeholder='e-mail'
+          value={email}
+        />
         <input
           type='password'
           name='password'
           id='password'
           placeholder='Password'
+          value={password}
         />
         <button type='submit' className='btn form__btn'>
           Login
