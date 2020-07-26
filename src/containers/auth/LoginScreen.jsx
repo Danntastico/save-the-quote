@@ -22,6 +22,7 @@ export const LoginScreen = () => {
           id='email'
           placeholder='e-mail'
           value={email}
+          onChange={handleInputChange}
         />
         <input
           type='password'
@@ -29,6 +30,7 @@ export const LoginScreen = () => {
           id='password'
           placeholder='Password'
           value={password}
+          onChange={handleInputChange}
         />
         <button type='submit' className='btn form__btn'>
           Login
