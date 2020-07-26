@@ -1,0 +1,31 @@
+.quote {
+  border-bottom: 0.5px solid $sec2-1;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.quote__title {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: left;
+  color: $prim-5;
+  margin: 0px;
+}
+
+.quote__desc {
+  text-align: right;
+  font-style: italic;
+  font-size: 1.1em;
+}
+.quote__page {
+  font-size: 0.8em;
+  color: $sec1-5;
+}
+
+.quote__icon {
+  font-size: 3.5em;
+  margin-left: 20px;
+  color: $prim-5;
+}
