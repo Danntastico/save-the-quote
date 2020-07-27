@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { HomeScreen } from '../containers/home/HomeScreen';
 import { LoginScreen } from '../containers/auth/LoginScreen';
+import { RegisterScreen } from '../containers/auth/RegisterScreen';
 
 export const AppRouter = () => {
   return (
@@ -10,6 +11,7 @@ export const AppRouter = () => {
         <Switch>
           <Route exact path='/' component={HomeScreen} />
           <Route exact path='/login' component={LoginScreen} />
+          <Route exact path='/register' component={RegisterScreen} />
         </Switch>
       </div>
     </Router>
