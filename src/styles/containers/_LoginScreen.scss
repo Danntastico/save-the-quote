@@ -1,0 +1,20 @@
+.googleLogin {
+  margin-top: 15px;
+  @extend %box-shadow-2;
+  display: flex;
+  padding: 10px;
+  background-color: $prim-1;
+  align-items: center;
+  border-radius: 2px;
+}
+.googleLogin__label {
+  font-size: 1em;
+  color: $prim-5;
+  font-weight: bold;
+}
+
+.googleLogin__icon {
+  font-size: 1.5em;
+  margin-right: 20px;
+  color: $prim-5;
+}
