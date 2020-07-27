@@ -8,7 +8,8 @@ export const LoginScreen = () => {
   });
   const { email, password } = formValues;
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     console.log(email, password);
   };
 
@@ -16,12 +17,21 @@ export const LoginScreen = () => {
     <div className='form__main'>
       <form action='addQuote' className='form' onSubmit={handleLogin}>
         <h2 className='form__title'>Login</h2>
-        <input type='email' name='email' id='email' placeholder='e-mail' />
+        <input
+          type='email'
+          name='email'
+          id='email'
+          placeholder='e-mail'
+          value={email}
+          onChange={handleInputChange}
+        />
         <input
           type='password'
           name='password'
           id='password'
           placeholder='Password'
+          value={password}
+          onChange={handleInputChange}
         />
         <button type='submit' className='btn form__btn'>
           Login
