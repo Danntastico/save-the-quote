@@ -2,8 +2,12 @@ import React from 'react';
 import { useForm } from '../../hooks/useForm';
 
 import validator from 'validator';
+import { useDispatch } from 'react-redux';
+import { setError, removeError } from '../../actions/ui';
 
 export const RegisterScreen = () => {
+  const dispatch = useDispatch();
+
   const [formValues, handleInputChange] = useForm({
     name: '',
     email: '',
@@ -21,22 +25,29 @@ export const RegisterScreen = () => {
 
   const isFormValid = () => {
     if (name.trim().length === 0) {
+      dispatch(setError('Name is required'));
       return false;
     } else if (!validator.isEmail(email)) {
+      dispatch(setError('Email is not Valid'));
       return false;
     } else if (password !== password2 && password.length < 5) {
+      dispatch(
+        setError(
+          'Password should be at least 6 characters and match each other'
+        )
+      );
       return false;
     }
-
+    dispatch(removeError());
     return true;
   };
 
   return (
-    <div class='form__main'>
+    <div className='form__main'>
       <div className='form__alertError'></div>
       <form
         action='addQuote'
-        class='form register__form'
+        className='form register__form'
         onSubmit={handleSubmit}
       >
         <h2 className='form__title'>Register</h2>
@@ -72,10 +83,10 @@ export const RegisterScreen = () => {
           value={password2}
           onChange={handleInputChange}
         />
-        <button type='submit' class='btn form__btn'>
+        <button type='submit' className='btn form__btn'>
           Register
         </button>
-        <a href='register.html' class='link'>
+        <a href='register.html' className='link'>
           Do you have an account? Login
         </a>
       </form>
